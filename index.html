@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%230d9488%22/><path d=%22M50 25 A12 12 0 1 0 50 49 A12 12 0 1 0 50 25 Z M32 75 C32 60 40 54 50 54 C60 54 68 60 68 75 Z%22 fill=%22white%22/></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="theme-color" content="#0d9488" />
+    <meta name="description" content="GramaMaa AI — Your Mother & Child Care Companion. AI-assisted maternal and child healthcare support platform for pregnancy, vaccination, nutrition, doctor prescriptions, and emergency support." />
+    <title>GramaMaa AI — Your Mother & Child Care Companion | గ్రామీణ మాతా శిశు సంరక్షణ</title>
+    <!-- PWA Manifest & Mobile Web App Meta -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="GramaMaa AI" />
+    <!-- Google Fonts for English and Telugu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased min-h-screen selection:bg-teal-100 selection:text-teal-900">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Register service worker for offline and app installation support
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>
